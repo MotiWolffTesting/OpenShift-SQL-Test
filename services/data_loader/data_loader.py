@@ -18,11 +18,11 @@ class DataLoader:
             password=self.password, database=self.database,
         )
         try:
-            cursor = connection.cursor()
+            cursor = connection.cursor(dictionary=True)
             cursor.execute("SELECT id, first_name, last_name FROM data;")
             rows = cursor.fetchall()
-            cursor.close()
             return rows
+            cursor.close()
         finally:
             connection.close()
             
