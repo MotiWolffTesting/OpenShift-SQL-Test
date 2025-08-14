@@ -1,0 +1,317 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  generateName: data-loader-5f496fb497-
+  annotations:
+    k8s.ovn.org/pod-networks: '{"default":{"ip_addresses":["10.128.6.254/23"],"mac_address":"0a:58:0a:80:06:fe","gateway_ips":["10.128.6.1"],"routes":[{"dest":"10.128.0.0/14","nextHop":"10.128.6.1"},{"dest":"172.30.0.0/16","nextHop":"10.128.6.1"},{"dest":"169.254.0.5/32","nextHop":"10.128.6.1"},{"dest":"100.64.0.0/16","nextHop":"10.128.6.1"}],"ip_address":"10.128.6.254/23","gateway_ip":"10.128.6.1","role":"primary"}}'
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "ovn-kubernetes",
+          "interface": "eth0",
+          "ips": [
+              "10.128.6.254"
+          ],
+          "mac": "0a:58:0a:80:06:fe",
+          "default": true,
+          "dns": {}
+      }]
+    kubernetes.io/limit-ranger: 'LimitRanger plugin set: cpu, memory request for container data-loader; cpu, memory limit for container data-loader'
+    openshift.io/generated-by: OpenShiftNewApp
+    openshift.io/scc: restricted-v2
+    seccomp.security.alpha.kubernetes.io/pod: runtime/default
+  resourceVersion: '4059423904'
+  name: data-loader-5f496fb497-kvd62
+  uid: 24c32d45-5b2a-4113-9f20-d3c35b86d218
+  creationTimestamp: '2025-08-14T13:40:43Z'
+  managedFields:
+    - manager: ip-10-0-33-24
+      operation: Update
+      apiVersion: v1
+      time: '2025-08-14T13:40:43Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:k8s.ovn.org/pod-networks': {}
+      subresource: status
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2025-08-14T13:40:43Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:openshift.io/generated-by': {}
+          'f:generateName': {}
+          'f:labels':
+            .: {}
+            'f:deployment': {}
+            'f:pod-template-hash': {}
+          'f:ownerReferences':
+            .: {}
+            'k:{"uid":"e03d8bf8-1836-4c2c-8eff-efb8d647aa97"}': {}
+        'f:spec':
+          'f:containers':
+            'k:{"name":"data-loader"}':
+              'f:image': {}
+              'f:terminationMessagePolicy': {}
+              .: {}
+              'f:workingDir': {}
+              'f:resources': {}
+              'f:args': {}
+              'f:command': {}
+              'f:env':
+                .: {}
+                'k:{"name":"MYSQL_DATABASE"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+                'k:{"name":"MYSQL_HOST"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+                'k:{"name":"MYSQL_PASSWORD"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+                'k:{"name":"MYSQL_PORT"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+                'k:{"name":"MYSQL_USER"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+              'f:terminationMessagePath': {}
+              'f:imagePullPolicy': {}
+              'f:ports':
+                .: {}
+                'k:{"containerPort":8080,"protocol":"TCP"}':
+                  .: {}
+                  'f:containerPort': {}
+                  'f:protocol': {}
+              'f:name': {}
+          'f:dnsPolicy': {}
+          'f:enableServiceLinks': {}
+          'f:restartPolicy': {}
+          'f:schedulerName': {}
+          'f:securityContext': {}
+          'f:terminationGracePeriodSeconds': {}
+    - manager: multus-daemon
+      operation: Update
+      apiVersion: v1
+      time: '2025-08-14T13:40:44Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:k8s.v1.cni.cncf.io/network-status': {}
+      subresource: status
+    - manager: kubelet
+      operation: Update
+      apiVersion: v1
+      time: '2025-08-14T13:40:45Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:conditions':
+            'k:{"type":"ContainersReady"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Initialized"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"PodReadyToStartContainers"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Ready"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+          'f:containerStatuses': {}
+          'f:hostIP': {}
+          'f:hostIPs': {}
+          'f:phase': {}
+          'f:podIP': {}
+          'f:podIPs':
+            .: {}
+            'k:{"ip":"10.128.6.254"}':
+              .: {}
+              'f:ip': {}
+          'f:startTime': {}
+      subresource: status
+  namespace: motiwolff-dev
+  ownerReferences:
+    - apiVersion: apps/v1
+      kind: ReplicaSet
+      name: data-loader-5f496fb497
+      uid: e03d8bf8-1836-4c2c-8eff-efb8d647aa97
+      controller: true
+      blockOwnerDeletion: true
+  labels:
+    deployment: data-loader
+    pod-template-hash: 5f496fb497
+spec:
+  restartPolicy: Always
+  serviceAccountName: default
+  imagePullSecrets:
+    - name: default-dockercfg-ss6v9
+  priority: -3
+  schedulerName: default-scheduler
+  enableServiceLinks: true
+  terminationGracePeriodSeconds: 30
+  preemptionPolicy: PreemptLowerPriority
+  nodeName: ip-10-0-33-24.ec2.internal
+  securityContext:
+    seLinuxOptions:
+      level: 's0:c77,c49'
+    fsGroup: 1005950000
+    seccompProfile:
+      type: RuntimeDefault
+  containers:
+    - resources:
+        limits:
+          cpu: '1'
+          memory: 1000Mi
+        requests:
+          cpu: 10m
+          memory: 64Mi
+      terminationMessagePath: /dev/termination-log
+      name: data-loader
+      command:
+        - uvicorn
+      env:
+        - name: MYSQL_HOST
+          value: mysql
+        - name: MYSQL_PORT
+          value: '3306'
+        - name: MYSQL_USER
+          value: appuser
+        - name: MYSQL_PASSWORD
+          value: apppass
+        - name: MYSQL_DATABASE
+          value: appdb
+      securityContext:
+        capabilities:
+          drop:
+            - ALL
+        runAsUser: 1005950000
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - name: kube-api-access-brdf2
+          readOnly: true
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      terminationMessagePolicy: File
+      image: 'motiwolff/openshift-sql-test@sha256:a7c5e629a38cce700d4818391ada8259406ff5582058d5343cb682bd3da0a3db'
+      workingDir: /app/services/data_loader
+      args:
+        - 'app:app'
+        - '--host'
+        - 0.0.0.0
+        - '--port'
+        - '8080'
+  serviceAccount: default
+  volumes:
+    - name: kube-api-access-brdf2
+      projected:
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              name: kube-root-ca.crt
+              items:
+                - key: ca.crt
+                  path: ca.crt
+          - downwardAPI:
+              items:
+                - path: namespace
+                  fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+          - configMap:
+              name: openshift-service-ca.crt
+              items:
+                - key: service-ca.crt
+                  path: service-ca.crt
+        defaultMode: 420
+  dnsPolicy: ClusterFirst
+  tolerations:
+    - key: node.kubernetes.io/not-ready
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/unreachable
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/memory-pressure
+      operator: Exists
+      effect: NoSchedule
+  priorityClassName: sandbox-users-pods
+status:
+  containerStatuses:
+    - restartCount: 0
+      started: true
+      ready: true
+      name: data-loader
+      state:
+        running:
+          startedAt: '2025-08-14T13:40:44Z'
+      volumeMounts:
+        - name: kube-api-access-brdf2
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          readOnly: true
+          recursiveReadOnly: Disabled
+      imageID: 'docker.io/motiwolff/openshift-sql-test@sha256:a7c5e629a38cce700d4818391ada8259406ff5582058d5343cb682bd3da0a3db'
+      image: 'docker.io/motiwolff/openshift-sql-test@sha256:a7c5e629a38cce700d4818391ada8259406ff5582058d5343cb682bd3da0a3db'
+      lastState: {}
+      containerID: 'cri-o://4cdb0d07a72ba0c48866910a4f72de8f66d1185a95e4a91d4b2dfc5615d009fe'
+  qosClass: Burstable
+  hostIPs:
+    - ip: 10.0.33.24
+  podIPs:
+    - ip: 10.128.6.254
+  podIP: 10.128.6.254
+  hostIP: 10.0.33.24
+  startTime: '2025-08-14T13:40:43Z'
+  conditions:
+    - type: PodReadyToStartContainers
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2025-08-14T13:40:45Z'
+    - type: Initialized
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2025-08-14T13:40:43Z'
+    - type: Ready
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2025-08-14T13:40:45Z'
+    - type: ContainersReady
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2025-08-14T13:40:45Z'
+    - type: PodScheduled
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2025-08-14T13:40:43Z'
+  phase: Running
